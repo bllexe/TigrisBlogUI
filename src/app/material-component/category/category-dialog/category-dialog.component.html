@@ -1,0 +1,14 @@
+<!-- add-category-dialog.component.html -->
+<h1 mat-dialog-title>Add Category</h1>
+<div mat-dialog-content>
+  <form [formGroup]="categoryForm">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+</div>
