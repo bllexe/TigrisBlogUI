@@ -23,4 +23,31 @@ export class CategoryService {
       }
     ));
   }
+
+  getAllCategorys() : Observable<any>{
+    return this.apiService.get(this.CATEGORY_PATH).pipe(map(
+      res=>{
+        if(res){
+          return res;
+        }else{
+          return {};
+        }
+      }
+    ));
+  }
+
+  deleteCategory(id:number) : Observable<any>{
+    return this.apiService.delete(this.CATEGORY_PATH+"/"+id).pipe(map(
+      res=>{
+        if(res){
+          return res;
+        }else{
+          return {};
+        }
+    }
+
+    ));
+  }
 }
+  
+  

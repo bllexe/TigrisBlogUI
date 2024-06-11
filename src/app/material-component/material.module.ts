@@ -37,6 +37,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoryDialogComponent } from './category/category-dialog/category-dialog.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -70,12 +72,14 @@ import { CategoryDialogComponent } from './category/category-dialog/category-dia
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    NgbModule
   ],
   providers: [],
   declarations: [
     CategoryComponent,
-    CategoryDialogComponent
+    CategoryDialogComponent,
+    ConfirmationDialogComponent
   ],
 })
 export class MaterialComponentsModule {}

@@ -1,17 +1,23 @@
 <button mat-raised-button color="accent" (click)="openDialog()">Add Category</button>
 <hr>
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>This card indeterminates progress bar.</p>
-    <p>Some Text will be here</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="warn">Delete</button>
-    <button mat-button color="primary">Update</button>
-  </mat-card-actions>
+
+<div *ngIf="categories.length===0"; else categoryList>
+<h3>No Category Found</h3>
+</div>
+
+<div class="category-container">
+
+<mat-card #categoryList class="example-card" *ngFor="let category of categories">
+<mat-card-header>
+  <mat-card-title>Category By Author</mat-card-title>
+  <mat-card-subtitle>Total Article Related By Cateogry</mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+  <p>{{ category.title }}</p>
+</mat-card-content>
+<mat-card-actions>
+  <button mat-button color="warn" (click)="deleteCategory(category.id)" ><b>Delete</b></button>
+</mat-card-actions>
 
 </mat-card>
+</div>
